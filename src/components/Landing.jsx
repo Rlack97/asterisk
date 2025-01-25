@@ -1,14 +1,13 @@
 import Nav from "./Nav";
 import Section from "./Section";
 import Footer from "./Footer";
-import HeadPhone from "./HeadPhone";
 import data from "./data.json";
+import styles from "./Landing.module.css";
 
 export default function Landing() {
   return (
-    <div>
+    <div id="home">
       <Nav />
-      {/* <HeadPhone /> */}
       {data.map((section, index) => (
         <Section index={index} title={section.title} cards={section.cards} />
       ))}
