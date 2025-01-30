@@ -5,12 +5,33 @@
       {
         "id": 3,
         "name": "card 3",
+        "description": "<FaReact />",
+        "photo" :" div"
+      },
+      {
+        "id": 3,
+        "name": "card 3",
         "description": "ThirdCard"
       },
       {
-        "id": 4,
-        "name": "card 4",
-        "description": "FourthCard"
+        "id": 3,
+        "name": "card 3",
+        "description": "ThirdCard"
+      },
+      {
+        "id": 3,
+        "name": "card 3",
+        "description": "ThirdCard"
+      },
+      {
+        "id": 3,
+        "name": "card 3",
+        "description": "ThirdCard"
+      },
+      {
+        "id": 3,
+        "name": "card 3",
+        "description": "ThirdCard"
       }
     ]
   },
@@ -19,12 +40,12 @@
     "cards": [
       {
         "id": 5,
-        "name": "HackGlobal Finalist 9 진출출",
+        "name": "HackGlobal Finalist 9 진출",
         "description": "싱가폴에서 열린 AngelHack 주최 세계 해커톤 대회 ‘HackGlobal’ 최종 9팀 선발"
       },
       {
         "id": 6,
-        "name": "HackSeoul 부문 1위위",
+        "name": "HackSeoul 부문 1위",
         "description": "AngelHack과 쿠팡이 공동 주최한 동아시아 지역구 해커톤 ‘HackSeoul’에서 기업의 사회적 책임 부문 1위"
       },
       {

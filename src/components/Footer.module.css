@@ -1,0 +1,13 @@
+.footer {
+    text-align: start;
+    align-self: self-start;
+    padding-left: 20px;
+    background: #807c7c;
+    width: 100%;
+    box-sizing: border-box; 
+
+}
+
+
+.footer_content{
+}

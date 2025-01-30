@@ -2,6 +2,8 @@
   padding: 100px 20px;
   position: relative;
   width: 100%;
+  box-sizing: border-box; 
+
 }
 
 .container {
@@ -13,7 +15,7 @@
   font-weight: 700;
   color: var(--accent-color);
   margin-bottom: 3rem;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .cardsContainer {
@@ -30,5 +32,5 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: calc(33.333% - 30px); /* 3개씩 배치하고 간격을 고려 */
   max-width: 300px; /* 카드 최대 너비 제한 */
-  box-sizing: border-box; /* 패딩 포함 */
+  box-sizing: border-box; 
 }

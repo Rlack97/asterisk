@@ -12,7 +12,9 @@ export default function Nav() {
   return (
     <nav className={styles.navbar}>
       <div className={styles.brand}>
-        <a href="#home">김찬빈</a>
+        <a href="#home" onClick={(e) => handleScroll(e, "home")}>
+          김찬빈
+        </a>
       </div>
       <ul className={styles.navLinks}>
         <li>
@@ -21,16 +23,14 @@ export default function Nav() {
           </a>
         </li>
         <li>
-        <a href="#section 1" onClick={(e) => handleScroll(e, "section 1")}>
-        Educations</a>
+          <a href="#section 1" onClick={(e) => handleScroll(e, "section 1")}>
+            Educations
+          </a>
         </li>
         <li>
-        <a href="#section 2" onClick={(e) => handleScroll(e, "section 2")}>
-        Publications</a>
-        </li>
-        <li>
-        <a href="#section 3" onClick={(e) => handleScroll(e, "section 3")}>
-        Projects</a>
+          <a href="#section 2" onClick={(e) => handleScroll(e, "section 2")}>
+            Projects
+          </a>
         </li>
       </ul>
     </nav>
