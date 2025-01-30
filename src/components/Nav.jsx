@@ -19,12 +19,12 @@ export default function Nav() {
       <ul className={styles.navLinks}>
         <li>
           <a href="#section 0" onClick={(e) => handleScroll(e, "section 0")}>
-            Experience
+            Skills
           </a>
         </li>
         <li>
           <a href="#section 1" onClick={(e) => handleScroll(e, "section 1")}>
-            Educations
+            Experience
           </a>
         </li>
         <li>

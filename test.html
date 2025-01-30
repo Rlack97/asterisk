@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chanhwi Kim</title>
+
+    <!-- GSAP 라이브러리 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+      /* === 기본 스타일 === */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* 스크롤을 부드럽게 만드는 스타일 */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      :root {
+        --primary-color: #0066cc;
+        --text-primary: #1a365d;
+        --text-secondary: #4a5568;
+        --bg-color: #f8f9fa;
+        --card-bg: #ffffff;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        line-height: 1.6;
+        color: var(--text-primary);
+        background-color: var(--bg-color);
+        overflow-x: hidden;
+      }
+
+      /* === 네비게이션 === */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 2rem;
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+
+      /* 로고(브랜드) 영역 */
+      .navbar-brand a {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary-color);
+        text-decoration: none;
+      }
+
+      /* 네비게이션 링크 영역 */
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-weight: 500;
+        position: relative;
+        padding: 0.5rem 0;
+        transition: color 0.3s;
+      }
+
+      /* hover 시 색상 전환 */
+      .nav-links a:hover {
+        color: var(--primary-color);
+      }
+
+      /* 링크 하단 슬라이드 애니메이션 */
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary-color);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      /* === 헤더 섹션 === */
+      .header {
+        height: 100vh; /* 화면 전체 높이 */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* 텍스트를 화면 아래로 정렬 */
+        align-items: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+      }
+
+      .profile-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: auto;
+        height: 120%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+        z-index: 0;
+      }
+
+      .header-content {
+        position: relative;
+        z-index: 1; /* 텍스트가 이미지 위에 보이도록 설정 */
+        max-width: 800px;
+        text-align: center;
+        padding: 2rem; /* 텍스트 여백 */
+        color: #fff;
+        background: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); /* 텍스트 배경 투명 검정 (가독성 개선) */
+        border-radius: 10px;
+        margin-bottom: 4rem;
+      }
+
+      .header-title {
+        font-size: 3rem; /* 타이틀 크기 */
+        margin-bottom: 1rem;
+        background: linear-gradient(90deg, #ffffff, #d1d1d1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: 0; /* 애니메이션 초기 상태 */
+        transform: translateY(30px); /* 애니메이션 초기 상태 */
+      }
+
+      .header-subtitle {
+        font-size: 1.5rem;
+        color: #e9ecef;
+        margin-bottom: 2rem;
+        opacity: 0; /* 애니메이션 초기 상태 */
+        transform: translateY(30px); /* 애니메이션 초기 상태 */
+      }
+
+      /* === 공통 섹션 스타일 === */
+      .section {
+        padding: 100px 20px;
+        position: relative;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 3rem;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      /* === About 섹션 === */
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .about-text {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+
+      .about-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+
+      .stat-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      /* === Work Experience 섹션 === */
+      .experience-item {
+        display: grid;
+        grid-template-columns: 100px 1fr auto;
+        gap: 2rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        background: var(--card-bg);
+        border-radius: 16px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0; /* 초기 투명도 */
+        transform: translateY(20px); /* 초기 위치 */
+      }
+
+      .experience-item h3 {
+        margin-bottom: 0.5rem;
+      }
+
+      .experience-dates {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+      }
+
+      .experience-description {
+        grid-column: 2 / 3;
+        color: var(--text-secondary);
+      }
+
+      /* === Educations 섹션 === */
+      .education-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+      }
+
+      .education-item {
+        background: var(--card-bg);
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+      }
+
+      .education-item:hover {
+        transform: translateY(-8px);
+      }
+
+      /* === Publications 섹션 === */
+      .publication-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .publication-card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .publication-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      }
+
+      /* === Projects 섹션 === */
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+      }
+
+      .project-card {
+        background: var(--card-bg);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .project-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .project-content {
+        padding: 2rem;
+      }
+
+      /* === Footer === */
+      .footer {
+        background: #1a365d;
+        color: white;
+        padding: 4rem 0;
+        margin-top: 4rem;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .footer-content h3 {
+        margin-bottom: 1rem;
+      }
+
+      /* === 반응형 디자인 === */
+      @media (max-width: 768px) {
+        .header-title {
+          font-size: 2.5rem;
+        }
+
+        .about-content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .experience-item {
+          grid-template-columns: 80px 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 네비게이션 -->
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a href="#home">Chanhwi Kim</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#workexperience">Work</a></li>
+        <li><a href="#educations">Educations</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Projects</a></li>
+      </ul>
+    </nav>
+
+    <!-- 헤더 섹션 -->
+    <header class="header" id="home">
+      <img src="assets/tmp_profile.JPG" alt="Profile" class="profile-image" />
+      <div class="header-content">
+        <h1 class="header-title">CHANHWI KIM</h1>
+        <p class="header-subtitle">NLP Researcher</p>
+      </div>
+    </header>
+
+    <!-- About 섹션 -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              안녕하세요. 저는 한국대학교 컴퓨터공학과 석사과정에 재학 중인
+              홍길동입니다. 현재 인공지능 연구실에서 컴퓨터 비전과 딥러닝을
+              연구하고 있습니다.
+            </p>
+          </div>
+          <div class="about-stats">
+            <div class="stat-card">
+              <h3>Research Areas</h3>
+              <p>
+                Deep Learning<br />Natural Language Processing<br />Clinical NLP
+              </p>
+            </div>
+            <div class="stat-card">
+              <h3>Education</h3>
+              <p>M.S. in Computer Science<br />Korea University</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience 섹션 -->
+    <section class="section" id="workexperience">
+      <div class="container">
+        <h2 class="section-title">Work Experience</h2>
+
+        <!-- 예시 Experience Item 1 -->
+        <div class="experience-item">
+          <div>
+            <h3>AI Research Intern</h3>
+            <div class="experience-dates">2021.07 - 2022.01</div>
+          </div>
+          <div class="experience-description">
+            <p>
+              인공지능 모델 개발 및 데이터 분석을 담당하였으며, 컴퓨터 비전 모델
+              최적화 프로젝트에 참여하여 정확도를 10% 향상시켰습니다.
+            </p>
+          </div>
+          <div>
+            <!-- 필요하면 링크나 로고 등을 추가할 수 있습니다. -->
+          </div>
+        </div>
+
+        <!-- 예시 Experience Item 2 -->
+        <div class="experience-item">
+          <div>
+            <h3>Data Science Intern</h3>
+            <div class="experience-dates">2022.07 - 2023.02</div>
+          </div>
+          <div class="experience-description">
+            <p>
+              빅데이터 분석 플랫폼 구축 프로젝트에 참여하여, 분산 처리
+              환경에서의 데이터 시각화 및 분석 자동화 시스템을 개발했습니다.
+            </p>
+          </div>
+          <div>
+            <!-- 필요하면 링크나 로고 등을 추가할 수 있습니다. -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Educations 섹션 -->
+    <section class="section" id="educations">
+      <div class="container">
+        <h2 class="section-title">Educations</h2>
+        <div class="education-list">
+          <!-- 예시 Education Item -->
+          <div class="education-item">
+            <h3>한국대학교</h3>
+            <p>B.S. in Computer Science (2015 - 2019)</p>
+            <p>
+              주요 학습 분야: 알고리즘, 데이터구조, 인공지능, 시스템 프로그래밍
+              등
+            </p>
+          </div>
+          <div class="education-item">
+            <h3>한국대학교</h3>
+            <p>M.S. in Computer Science (2020 - 현재)</p>
+            <p>주요 연구 분야: 자연어 처리, 머신러닝, 빅데이터 분석</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications 섹션 -->
+    <section class="section" id="publications">
+      <div class="container">
+        <h2 class="section-title">Publications</h2>
+        <div class="publication-grid">
+          <div class="publication-card">
+            <h3>논문 제목이 들어갑니다</h3>
+            <p>저자명, 학회/저널명, 연도</p>
+            <p>간단한 논문 설명이 들어갑니다.</p>
+          </div>
+          <!-- 더 많은 publication 카드 추가 -->
+          <div class="publication-card">
+            <h3>Another Paper Title</h3>
+            <p>저자명, 학회/저널명, 연도</p>
+            <p>
+              이 논문에서는 딥러닝 기반 자연어 처리 모델에 대해 다루었습니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects 섹션 -->
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-grid">
+          <div class="project-card">
+            <img
+              src="/api/placeholder/350/200"
+              alt="Project"
+              class="project-image"
+            />
+            <div class="project-content">
+              <h3>프로젝트명</h3>
+              <p>프로젝트 설명이 들어갑니다.</p>
+              <p>사용 기술: Python, TensorFlow, PyTorch</p>
+            </div>
+          </div>
+          <div class="project-card">
+            <img
+              src="/api/placeholder/350/200"
+              alt="Project2"
+              class="project-image"
+            />
+            <div class="project-content">
+              <h3>프로젝트명2</h3>
+              <p>프로젝트 설명이 들어갑니다.</p>
+              <p>사용 기술: Python, Flask, React</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div>
+          <h3>Contact</h3>
+          <p>Email: example@korea.ac.kr</p>
+          <p>GitHub: github.com/username</p>
+        </div>
+        <!-- 필요 시 SNS나 다른 영역을 추가할 수 있습니다. -->
+      </div>
+    </footer>
+
+    <!-- GSAP 스크립트 -->
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      // 헤더 애니메이션
+      gsap.to(".header-title", {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: 0.5,
+      });
+
+      gsap.to(".header-subtitle", {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: 0.7,
+      });
+
+      // 섹션 타이틀 애니메이션
+      document.querySelectorAll(".section-title").forEach((title) => {
+        gsap.to(title, {
+          scrollTrigger: {
+            trigger: title,
+            start: "top 80%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1,
+        });
+      });
+
+      // About 섹션 애니메이션
+      gsap.to(".about-text", {
+        scrollTrigger: {
+          trigger: ".about-text",
+          start: "top 80%",
+        },
+        opacity: 1,
+        x: 0,
+        duration: 1,
+      });
+
+      document.querySelectorAll(".stat-card").forEach((card, index) => {
+        gsap.to(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: index * 0.2,
+        });
+      });
+
+      // Work Experience 아이템
+      document.querySelectorAll(".experience-item").forEach((item, index) => {
+        gsap.to(item, {
+          scrollTrigger: {
+            trigger: item,
+            start: "top 80%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: index * 0.2,
+        });
+      });
+
+      // Educations 아이템
+      document.querySelectorAll(".education-item").forEach((item, index) => {
+        gsap.to(item, {
+          scrollTrigger: {
+            trigger: item,
+            start: "top 80%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: index * 0.2,
+        });
+      });
+
+      // Publications 카드
+      document.querySelectorAll(".publication-card").forEach((card, index) => {
+        gsap.to(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: index * 0.2,
+        });
+      });
+
+      // Projects 카드
+      document.querySelectorAll(".project-card").forEach((card, index) => {
+        gsap.to(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: index * 0.2,
+        });
+      });
+    </script>
+  </body>
+</html>

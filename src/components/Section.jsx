@@ -53,7 +53,11 @@ export default function Section(props) {
   }, []);
 
   return (
-    <div ref={sectionRef} id={`section ${props.index}`} className={styles.section}>
+    <div
+      ref={sectionRef}
+      id={`section ${props.index}`}
+      className={styles.section}
+    >
       <div className={styles.container}>
         <h2 ref={titleRef} className={styles.sectionTitle}>
           {props.title}
@@ -62,10 +66,14 @@ export default function Section(props) {
           {props.cards.map((card, index) => (
             <div
               key={index}
-              ref={(el) => (cardRefs.current[index] = el)} 
+              ref={(el) => (cardRefs.current[index] = el)}
               className={styles.card}
             >
-              <Card name={card.name} description={card.description} photo={card?.photo}/>
+              <Card
+                name={card.name}
+                description={card.description}
+                photo={card?.photo}
+              />
             </div>
           ))}
         </div>

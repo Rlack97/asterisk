@@ -2,8 +2,7 @@
   padding: 100px 20px;
   position: relative;
   width: 100%;
-  box-sizing: border-box; 
-
+  box-sizing: border-box;
 }
 
 .container {
@@ -26,11 +25,10 @@
 }
 
 .card {
-  background: #f9f9f9;
+  background: var(--background-color);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: calc(33.333% - 30px); /* 3개씩 배치하고 간격을 고려 */
-  max-width: 300px; /* 카드 최대 너비 제한 */
-  box-sizing: border-box; 
+  width: calc(50% - 30px); /* 3개씩 배치하고 간격을 고려 */
+  box-sizing: border-box;
 }

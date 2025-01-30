@@ -1,13 +1,12 @@
 .footer {
-    text-align: start;
-    align-self: self-start;
-    padding-left: 20px;
-    background: #807c7c;
-    width: 100%;
-    box-sizing: border-box; 
-
+  text-align: start;
+  align-self: self-start;
+  padding: 30px;
+  background: var(--accent-color);
+  width: 100%;
+  box-sizing: border-box;
 }
 
-
-.footer_content{
+.footer_content {
+  color: var(--white-text);
 }
