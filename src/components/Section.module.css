@@ -1,11 +1,11 @@
 .section {
   padding: 100px 20px;
   position: relative;
+  width: 100%;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 30px;
 }
 
 .sectionTitle {
@@ -16,9 +16,19 @@
   text-align: center;
 }
 
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap; /* 줄 바꿈 허용 */
+  gap: 30px; /* 카드 간격 */
+  justify-content: flex-start; /* 왼쪽 정렬 */
+}
+
 .card {
   background: #f9f9f9;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: calc(33.333% - 30px); /* 3개씩 배치하고 간격을 고려 */
+  max-width: 300px; /* 카드 최대 너비 제한 */
+  box-sizing: border-box; /* 패딩 포함 */
 }
