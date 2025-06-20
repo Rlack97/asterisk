@@ -6,6 +6,8 @@ date: "2024-01-15"
 tags: ["React", "WebGL"]
 readTime: "5분"
 author: "김찬빈"
+toc: true
+toc_sticky: true
 ---
 
 ## 소개
