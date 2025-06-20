@@ -25,5 +25,14 @@
     "date": "2024-01-05",
     "tags": ["CSS", "Modules", "Styling"],
     "readTime": "4분"
+  },
+  {
+    "id": 4,
+    "slug": "elk-stack-log-analysis",
+    "title": "ELK 스택으로 로그 분석하기",
+    "excerpt": "Elasticsearch, Logstash, Kibana를 활용한 로그 수집 및 시각화 실습 예제.",
+    "date": "2024-06-20",
+    "tags": ["ELK", "Elasticsearch", "Logstash", "Kibana", "DevOps", "로그"],
+    "readTime": "6분"
   }
 ] 
