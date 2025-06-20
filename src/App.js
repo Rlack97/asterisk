@@ -1,14 +1,18 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Landing from "./components/Landing";
+import Blog from "./components/Blog";
+import BlogPost from "./components/BlogPost";
 
 function App() {
   return (
-    <BrowserRouter className="App" basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

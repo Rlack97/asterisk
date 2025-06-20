@@ -3,6 +3,7 @@
   position: relative;
   width: 100%;
   box-sizing: border-box;
+  background: var(--color-white);
 }
 
 .container {
@@ -12,7 +13,7 @@
 .sectionTitle {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--accent-color);
+  color: var(--color-black);
   margin-bottom: 3rem;
   /* text-align: center; */
 }
@@ -25,10 +26,12 @@
 }
 
 .card {
-  background: var(--background-color);
+  background: var(--color-white);
+  color: var(--color-black);
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: calc(50% - 30px); /* 3개씩 배치하고 간격을 고려 */
+  box-shadow: 0 4px 12px rgba(34, 34, 34, 0.06);
+  width: calc(50% - 30px);
   box-sizing: border-box;
+  border: 2px solid var(--color-point);
 }

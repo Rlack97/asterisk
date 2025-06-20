@@ -2,7 +2,7 @@
   "name": "asterisk",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rlack97.github.io/asterisk",
+  "homepage": "https://rlack97.github.io/asterisk/",
   "dependencies": {
     "@react-three/drei": "^9.109.2",
     "@react-three/fiber": "^8.16.8",
@@ -11,10 +11,12 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/three": "^0.167.1",
     "gh-pages": "^6.1.1",
+    "gray-matter": "^4.0.3",
     "gsap": "^3.12.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.4.0",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^6.26.0",
     "react-scripts": "5.0.1",
     "three": "^0.167.1",
@@ -22,7 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cpx public/posts/**/* build/posts && cpx public/posts.json build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
@@ -48,6 +50,7 @@
   },
   "devDependencies": {
     "ajv": "^7.2.4",
+    "cpx": "^1.5.0",
     "vite": "^5.3.5"
   }
 }

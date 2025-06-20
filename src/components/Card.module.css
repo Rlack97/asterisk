@@ -1,2 +1,11 @@
-.title {
+.cardName {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-point);
+  margin-bottom: 10px;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: var(--color-black);
 }

@@ -1,59 +1,90 @@
 .navbar {
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: var(--color-black);
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 2rem;
-    z-index: 1000;
+    padding: 0 32px;
+    height: 64px;
+    box-shadow: 0 2px 8px rgba(34,34,34,0.08);
+    z-index: 100;
     transition: all 0.3s ease;
     box-sizing: border-box;
+}
 
-  }
-  
-  .brand a {
+.brand a {
+    color: var(--color-point);
     font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--accent-color);
+    font-weight: 700;
     text-decoration: none;
-  }
-  
-  .navLinks {
+    letter-spacing: 1px;
+    transition: color 0.2s;
     display: flex;
+    align-items: center;
+}
+
+.logoIcon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+.brand a:hover {
+    color: var(--color-point-light);
+}
+
+.navLinks {
     list-style: none;
-    gap: 2rem;
-  }
-  
-  .navLinks a {
-    color: #333; 
+    display: flex;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+.navLinks li {
+    display: flex;
+    align-items: center;
+}
+
+.navLinks a, .blogLink {
+    color: #fff;
     text-decoration: none;
+    font-size: 1rem;
     font-weight: 500;
-    position: relative;
-    padding: 0.5rem 0;
-    transition: color 0.3s;
-  }
-  
-  .navLinks a:hover {
-    color: var(--accent-color);
-  }
-  
-  .navLinks a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent-color);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-  }
-  
-  .navLinks a:hover::after {
-    width: 100%;
-  }
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.navLinks a:hover, .blogLink:hover {
+    background: var(--color-point-light);
+    color: var(--color-black);
+}
+
+.blogLink {
+    background: var(--color-point);
+    color: var(--color-black);
+    font-weight: 700;
+    border: 2px solid var(--color-point-light);
+    margin-left: 8px;
+}
+
+.blogLink:hover {
+    background: var(--color-black);
+    color: var(--color-point);
+    border-color: var(--color-point-dark);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 0 12px;
+    }
+    .navLinks {
+        gap: 16px;
+    }
+}
   

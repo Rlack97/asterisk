@@ -1,12 +1,21 @@
 .footer {
-  text-align: start;
-  align-self: self-start;
-  padding: 30px;
-  background: var(--accent-color);
   width: 100%;
-  box-sizing: border-box;
+  background: var(--color-black);
+  color: var(--color-point);
+  text-align: center;
+  padding: 32px 0 16px 0;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  border-top: 2px solid var(--color-point-light);
 }
 
-.footer_content {
-  color: var(--white-text);
+.footer a {
+  color: var(--color-point);
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.footer a:hover {
+  color: var(--color-point-dark);
 }
