@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/asterisk/static/css/main.f7b4be9e.css",
-    "main.js": "/asterisk/static/js/main.41aa8fbc.js",
-    "static/js/453.4cb0b673.chunk.js": "/asterisk/static/js/453.4cb0b673.chunk.js",
+    "main.css": "/asterisk/static/css/main.a231106a.css",
+    "main.js": "/asterisk/static/js/main.92fd3911.js",
+    "static/js/453.e2519f34.chunk.js": "/asterisk/static/js/453.e2519f34.chunk.js",
     "index.html": "/asterisk/index.html",
-    "main.f7b4be9e.css.map": "/asterisk/static/css/main.f7b4be9e.css.map",
-    "main.41aa8fbc.js.map": "/asterisk/static/js/main.41aa8fbc.js.map",
-    "453.4cb0b673.chunk.js.map": "/asterisk/static/js/453.4cb0b673.chunk.js.map"
+    "main.a231106a.css.map": "/asterisk/static/css/main.a231106a.css.map",
+    "main.92fd3911.js.map": "/asterisk/static/js/main.92fd3911.js.map",
+    "453.e2519f34.chunk.js.map": "/asterisk/static/js/453.e2519f34.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f7b4be9e.css",
-    "static/js/main.41aa8fbc.js"
+    "static/css/main.a231106a.css",
+    "static/js/main.92fd3911.js"
   ]
 }
