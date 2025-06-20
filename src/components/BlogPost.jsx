@@ -13,7 +13,7 @@ export default function BlogPost() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${process.env.PUBLIC_URL}/posts/${id}.md`)
+    fetch(`${process.env.PUBLIC_URL}/static/posts/${id}.md`)
       .then(response => {
         if (!response.ok) throw new Error('Post not found');
         return response.text();
