@@ -19,13 +19,13 @@ locale                   : "ko-KR"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "Asterisk"
 title_separator          : "-"
-subtitle                 : "와일드카드가 되고싶은 개발 블로그"
+subtitle                 : "와일드카드가 되고싶은 개발 블로그" # site tagline that appears below site title in masthead
 name                     : "김찬빈"
 description              : "주니어 개발자의 개발 기록"
-url                      : #"https://rlack97.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://rlack97.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/asterisk" # the subpath of your site, e.g. "/blog"
 repository               : "Rlack97/asterisk" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : "assets/images/teaser.png" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+teaser                   : "assets/imgs/teaser.png" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : # true, false (default)
@@ -114,14 +114,14 @@ analytics:
 # Site Author
 author:
   name             : "김찬빈"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : ""
+  avatar           : "assets/imgs/profile.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "무엇을 이뤘는지가 아니라, \n\n 무엇을 목표로 어디까지 갔는지가 인생이야."
   location         : "Seoul, South Korea"
   email            : "amalilith97@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:amalilith97@email.com"
+      url: "mailto:amalilith97@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -133,7 +133,7 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/Rlack97.com/"
+      url: "https://github.com/Rlack97"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
@@ -149,7 +149,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/Rlack97.com/"
+      url: "https://github.com/Rlack97"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
