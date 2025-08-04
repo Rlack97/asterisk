@@ -19,7 +19,7 @@ locale                   : "ko-KR"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "Asterisk"
 title_separator          : "-"
-subtitle                 : "Wildcard for our future" # site tagline that appears below site title in masthead
+subtitle                 : "개발 블로그" # site tagline that appears below site title in masthead
 name                     : "김찬빈"
 description              : "개발자 김찬빈의 블로그입니다."
 url                      : "https://rlack97.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
@@ -115,7 +115,7 @@ analytics:
 author:
   name             : "김찬빈"
   avatar           : "/assets/imgs/icon.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "이루었냐 아니냐가 아닌, 목표로 한 방향으로 어디까지 갔는지."
+  bio              : "이루었냐 아니냐가 아니라, \n 목표로 한 방향으로 어디까지 갔는지."
   location         : "Seoul, South Korea"
   email            : "amalilith97@gmail.com"
   links:
@@ -329,7 +329,7 @@ defaults:
       comments:  true
       share: true
       related: true
-      
+
   # _pages
   - scope:
       path: "_pages"
