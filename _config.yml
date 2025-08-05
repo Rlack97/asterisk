@@ -19,8 +19,8 @@ locale                   : "ko-KR"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "Asterisk"
 title_separator          : "-"
-subtitle                 : "와일드카드가 되고싶은 개발 블로그" # site tagline that appears below site title in masthead
-name                     : "김찬빈"
+subtitle                 : "와일드카드가 되고 싶은 개발 블로그" # site tagline that appears below site title in masthead
+name                     : "초심자 개발 블로거"
 description              : "주니어 개발자의 개발 기록"
 url                      : "https://rlack97.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/asterisk" # the subpath of your site, e.g. "/blog"
@@ -113,11 +113,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "김찬빈"
+  name             : ""
   avatar           : "assets/imgs/profile.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "무엇을 이뤘는지가 아니라, \n\n 무엇을 목표로 어디까지 갔는지가 인생이야."
+  bio              : "어디를 목표로<br>어디까지 달렸는가."
   location         : "Seoul, South Korea"
-  email            : "amalilith97@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -321,7 +320,15 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: true
-      comments: # true
-      share: true
       related: true
+      sidebar_main : true
+      toc: true
+      # toc_sticky: true
+
+  #_pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: "archive"
+      sidebar_main : true
