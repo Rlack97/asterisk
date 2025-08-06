@@ -10,24 +10,24 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>첫 번째 포스트 - Asterisk</title>
-<meta name="description" content="안녕하세요! 이것은 제 첫 번째 블로그 포스트입니다.">
+<!-- begin _includes/seo.html --><title>Jekyll 블로그 만들기 - Asterisk</title>
+<meta name="description" content="Jekyll 블로그란? Jekyll은 정적 사이트 생성기로, 마크다운 파일을 HTML로 변환해주는 도구입니다.">
 
 
-  <meta name="author" content="{&quot;name&quot;=&gt;&quot;&quot;, &quot;avatar&quot;=&gt;&quot;assets/imgs/profile.png&quot;, &quot;bio&quot;=&gt;&quot;어디를 목표로&lt;br&gt;어디까지 달렸는가.&quot;, &quot;location&quot;=&gt;&quot;Seoul, South Korea&quot;, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Email&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-envelope-square&quot;, &quot;url&quot;=&gt;&quot;mailto:amalilith97@gmail.com&quot;}, {&quot;label&quot;=&gt;&quot;Website&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;}, {&quot;label&quot;=&gt;&quot;Facebook&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook-square&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;, &quot;url&quot;=&gt;&quot;https://github.com/Rlack97&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;}]}">
+  <meta name="author" content="개발둥이">
   
-  <meta property="article:author" content="{&quot;name&quot;=&gt;&quot;&quot;, &quot;avatar&quot;=&gt;&quot;assets/imgs/profile.png&quot;, &quot;bio&quot;=&gt;&quot;어디를 목표로&lt;br&gt;어디까지 달렸는가.&quot;, &quot;location&quot;=&gt;&quot;Seoul, South Korea&quot;, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Email&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-envelope-square&quot;, &quot;url&quot;=&gt;&quot;mailto:amalilith97@gmail.com&quot;}, {&quot;label&quot;=&gt;&quot;Website&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;}, {&quot;label&quot;=&gt;&quot;Facebook&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook-square&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;, &quot;url&quot;=&gt;&quot;https://github.com/Rlack97&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;}]}">
+  <meta property="article:author" content="개발둥이">
   
 
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Asterisk">
-<meta property="og:title" content="첫 번째 포스트">
-<meta property="og:url" content="http://localhost:4000/asterisk/%EB%B8%94%EB%A1%9C%EA%B7%B8/nest/%EC%B2%AB%EB%B2%88%EC%A7%B8-%ED%8F%AC%EC%8A%A4%ED%8A%B8/">
+<meta property="og:title" content="Jekyll 블로그 만들기">
+<meta property="og:url" content="http://localhost:4000/asterisk/%EA%B0%9C%EB%B0%9C/sql/Jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/">
 
 
-  <meta property="og:description" content="안녕하세요! 이것은 제 첫 번째 블로그 포스트입니다.">
+  <meta property="og:description" content="Jekyll 블로그란? Jekyll은 정적 사이트 생성기로, 마크다운 파일을 HTML로 변환해주는 도구입니다.">
 
 
 
@@ -46,7 +46,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/asterisk/%EB%B8%94%EB%A1%9C%EA%B7%B8/nest/%EC%B2%AB%EB%B2%88%EC%A7%B8-%ED%8F%AC%EC%8A%A4%ED%8A%B8/">
+<link rel="canonical" href="http://localhost:4000/asterisk/%EA%B0%9C%EB%B0%9C/sql/Jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/">
 
 
 
@@ -81,6 +81,46 @@
     <!-- start custom head snippets -->
 
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- Custom CSS for tags -->
+<style>
+/* Title and tags layout */
+.archive__item-title {
+  margin: 0;
+  flex: 1;
+}
+
+.archive__item-tags {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.archive__item-tags .tag {
+  display: inline-block;
+  background-color: #f8f9fa;
+  color: #495057;
+  padding: 0.2rem 0.5rem;
+  margin: 0.1rem 0.2rem 0.1rem 0;
+  border-radius: 0.3rem;
+  font-size: 0.75rem;
+  border: 1px solid #dee2e6;
+  text-decoration: none;
+}
+
+.archive__item-tags .tag:hover {
+  background-color: #e9ecef;
+  color: #212529;
+}
+
+/* Remove underline from title links */
+.archive__item-title a {
+  text-decoration: none !important;
+}
+
+.archive__item-title a:hover {
+  text-decoration: none !important;
+}
+</style>
 
 <!-- end custom head snippets -->
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -152,14 +192,14 @@
   
     <div class="author__avatar">
       <a href="http://localhost:4000/asterisk/">
-        <img src="/asterisk/assets/imgs/profile.png" alt="" itemprop="image" class="u-photo">
+        <img src="/asterisk/assets/imgs/profile.png" alt="개발둥이" itemprop="image" class="u-photo">
       </a>
     </div>
   
 
   <div class="author__content">
     <h3 class="author__name p-name" itemprop="name">
-      <a class="u-url" rel="me" href="http://localhost:4000/asterisk/" itemprop="url"></a>
+      <a class="u-url" rel="me" href="http://localhost:4000/asterisk/" itemprop="url">개발둥이</a>
     </h3>
     
       <div class="author__bio p-note" itemprop="description">
@@ -273,7 +313,7 @@
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
-        <span class="nav__sub-title">프레임워크</span>
+        <span class="nav__sub-title">문법</span>
             <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
             <ul>
                 <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
@@ -284,7 +324,23 @@
                     
                 
                     
-                        <li><a href="/asterisk/categories/nest" class="">nest (1)</a></li>
+                        <li>
+                            <a href="/asterisk/categories/regex" class="">정규표현식 (1)</a>
+                        </li>
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                        <li>
+                            <a href="/asterisk/categories/sql" class="">SQL (1)</a>
+                        </li>
+                    
+                
                     
                 
             </ul>
@@ -301,8 +357,8 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="첫 번째 포스트">
-    <meta itemprop="description" content="안녕하세요! 이것은 제 첫 번째 블로그 포스트입니다.">
+    <meta itemprop="headline" content="Jekyll 블로그 만들기">
+    <meta itemprop="description" content="Jekyll 블로그란?Jekyll은 정적 사이트 생성기로, 마크다운 파일을 HTML로 변환해주는 도구입니다.">
     <meta itemprop="datePublished" content="2025-01-27T00:00:00+09:00">
     
 
@@ -310,7 +366,7 @@
       
         <header>
           <h1 id="page-title" class="page__title" itemprop="headline">
-            <a href="http://localhost:4000/asterisk/%EB%B8%94%EB%A1%9C%EA%B7%B8/nest/%EC%B2%AB%EB%B2%88%EC%A7%B8-%ED%8F%AC%EC%8A%A4%ED%8A%B8/" itemprop="url">첫 번째 포스트
+            <a href="http://localhost:4000/asterisk/%EA%B0%9C%EB%B0%9C/sql/Jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/" itemprop="url">Jekyll 블로그 만들기
 </a>
           </h1>
           
@@ -321,31 +377,44 @@
 
       <section class="page__content" itemprop="text">
         
-          <aside class="sidebar__right ">
+          <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
-              <ul class="toc__menu"><li><a href="#소개">소개</a><ul><li><a href="#앞으로-다룰-주제들">앞으로 다룰 주제들</a></li></ul></li><li><a href="#마무리">마무리</a></li></ul>
+              <ul class="toc__menu"><li><a href="#jekyll-블로그란">Jekyll 블로그란?</a><ul><li><a href="#장점">장점</a></li><li><a href="#설치-방법">설치 방법</a></li></ul></li><li><a href="#마무리">마무리</a></li></ul>
             </nav>
           </aside>
         
-        <p>안녕하세요! 이것은 제 첫 번째 블로그 포스트입니다.</p>
+        <h2 id="jekyll-블로그란">Jekyll 블로그란?</h2>
+<p>Jekyll은 정적 사이트 생성기로, 마크다운 파일을 HTML로 변환해주는 도구입니다.</p>
 
-<h2 id="소개">소개</h2>
-
-<p>이 블로그는 개발 관련 내용을 공유하기 위해 만들었습니다.</p>
-
-<h3 id="앞으로-다룰-주제들">앞으로 다룰 주제들</h3>
+<h3 id="장점">장점</h3>
 
 <ul>
-  <li>웹 개발</li>
-  <li>프로그래밍 언어</li>
-  <li>개발 도구</li>
-  <li>프로젝트 후기</li>
+  <li><strong>빠른 로딩</strong>: 정적 파일이므로 매우 빠름</li>
+  <li><strong>GitHub Pages 지원</strong>: 무료로 호스팅 가능</li>
+  <li><strong>마크다운 지원</strong>: 간편한 글 작성</li>
+  <li><strong>테마 다양성</strong>: 다양한 테마 사용 가능</li>
 </ul>
+
+<h3 id="설치-방법">설치 방법</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Ruby 설치 (macOS)</span>
+brew <span class="nb">install </span>ruby
+
+<span class="c"># Jekyll 설치</span>
+gem <span class="nb">install </span>jekyll bundler
+
+<span class="c"># 새 블로그 생성</span>
+jekyll new my-blog
+<span class="nb">cd </span>my-blog
+
+<span class="c"># 로컬 서버 실행</span>
+bundle <span class="nb">exec </span>jekyll serve
+</code></pre></div></div>
 
 <h2 id="마무리">마무리</h2>
 
-<p>앞으로 많은 내용을 공유하겠습니다. 감사합니다!</p>
+<p>Jekyll로 블로그를 만드는 것은 매우 간단하고 효율적입니다!</p>
 
         
       </section>
@@ -362,9 +431,11 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
+      <a href="/asterisk/tags/#github-pages" class="page__taxonomy-item p-category" rel="tag">GitHub Pages</a><span class="sep">, </span>
+    
       <a href="/asterisk/tags/#jekyll" class="page__taxonomy-item p-category" rel="tag">Jekyll</a><span class="sep">, </span>
     
-      <a href="/asterisk/tags/#%EC%B2%AB%ED%8F%AC%EC%8A%A4%ED%8A%B8" class="page__taxonomy-item p-category" rel="tag">첫포스트</a>
+      <a href="/asterisk/tags/#%EB%B8%94%EB%A1%9C%EA%B7%B8" class="page__taxonomy-item p-category" rel="tag">블로그</a>
     
     </span>
   </p>
@@ -381,9 +452,9 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/asterisk/categories/#nest" class="page__taxonomy-item p-category" rel="tag">nest</a><span class="sep">, </span>
+      <a href="/asterisk/categories/#sql" class="page__taxonomy-item p-category" rel="tag">sql</a><span class="sep">, </span>
     
-      <a href="/asterisk/categories/#%EB%B8%94%EB%A1%9C%EA%B7%B8" class="page__taxonomy-item p-category" rel="tag">블로그</a>
+      <a href="/asterisk/categories/#%EA%B0%9C%EB%B0%9C" class="page__taxonomy-item p-category" rel="tag">개발</a>
     
     </span>
   </p>
@@ -400,10 +471,10 @@
       
   <nav class="pagination">
     
-      <a href="/asterisk/%EA%B0%9C%EB%B0%9C/Jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="pagination--pager" title="Jekyll 블로그 만들기">이전</a>
+      <a href="#" class="pagination--pager disabled">이전</a>
     
     
-      <a href="#" class="pagination--pager disabled">다음</a>
+      <a href="/asterisk/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/" class="pagination--pager" title="정규표현식 기초">다음</a>
     
   </nav>
 
@@ -433,18 +504,28 @@
         <img src="/asterisk/assets/imgs/teaser.png" alt="">
       </div>
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/asterisk/%EA%B0%9C%EB%B0%9C/Jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="permalink">Jekyll 블로그 만들기
+    <div class="archive__item-header">
+      <h2 class="archive__item-title no_toc" itemprop="headline">
+        
+          <a href="/asterisk/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/" rel="permalink">정규표현식 기초
 </a>
+        
+      </h2>
       
-    </h2>
+        <div class="archive__item-tags">
+          
+            <span class="tag">Regex</span>
+          
+            <span class="tag">정규표현식</span>
+          
+            <span class="tag">문자열</span>
+          
+        </div>
+      
+    </div>
     
 
 
-    <p class="archive__item-excerpt" itemprop="description">Jekyll 블로그란?
-Jekyll은 정적 사이트 생성기로, 마크다운 파일을 HTML로 변환해주는 도구입니다.
-</p>
   </article>
 </div>
 

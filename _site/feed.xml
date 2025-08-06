@@ -1,4 +1,273 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/asterisk/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/asterisk/" rel="alternate" type="text/html" /><updated>2025-08-05T14:04:11+09:00</updated><id>http://localhost:4000/asterisk/feed.xml</id><title type="html">Asterisk</title><subtitle>주니어 개발자의 개발 기록</subtitle><author><name>{&quot;name&quot;=&gt;&quot;&quot;, &quot;avatar&quot;=&gt;&quot;assets/imgs/profile.png&quot;, &quot;bio&quot;=&gt;&quot;어디를 목표로&lt;br&gt;어디까지 달렸는가.&quot;, &quot;location&quot;=&gt;&quot;Seoul, South Korea&quot;, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Email&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-envelope-square&quot;, &quot;url&quot;=&gt;&quot;mailto:amalilith97@gmail.com&quot;}, {&quot;label&quot;=&gt;&quot;Website&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;}, {&quot;label&quot;=&gt;&quot;Facebook&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook-square&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;, &quot;url&quot;=&gt;&quot;https://github.com/Rlack97&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;}]}</name></author><entry><title type="html">Jekyll 블로그 만들기</title><link href="http://localhost:4000/asterisk/%EA%B0%9C%EB%B0%9C/Jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="alternate" type="text/html" title="Jekyll 블로그 만들기" /><published>2025-01-27T00:00:00+09:00</published><updated>2025-01-27T00:00:00+09:00</updated><id>http://localhost:4000/asterisk/%EA%B0%9C%EB%B0%9C/Jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/asterisk/%EA%B0%9C%EB%B0%9C/Jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/"><![CDATA[<h2 id="jekyll-블로그란">Jekyll 블로그란?</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/asterisk/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/asterisk/" rel="alternate" type="text/html" /><updated>2025-08-06T14:56:08+09:00</updated><id>http://localhost:4000/asterisk/feed.xml</id><title type="html">Asterisk</title><subtitle>주니어 개발자의 개발 기록</subtitle><author><name>개발둥이</name></author><entry><title type="html">정규표현식 기초</title><link href="http://localhost:4000/asterisk/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/" rel="alternate" type="text/html" title="정규표현식 기초" /><published>2025-08-06T00:00:00+09:00</published><updated>2025-08-06T00:00:00+09:00</updated><id>http://localhost:4000/asterisk/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D</id><content type="html" xml:base="http://localhost:4000/asterisk/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/"><![CDATA[<p>정규표현식(Regular Expression, 줄여서 <strong>Regex</strong>)은 문자열에서 <strong>특정 패턴을 찾고, 검사하고, 치환</strong>하기 위한 표현법입니다.
+프로그래밍, 데이터 분석, 로그 검색, 웹 크롤링 등 다양한 분야에서 필수적으로 사용됩니다.</p>
+
+<p>저의 경우 데이터 색인 시에 특정 데이터(날짜나 이름 등)의 형태를 변환할 때 주로 사용합니다.</p>
+
+<hr />
+
+<h2 id="1-문자열의-시작과-끝">1. 문자열의 시작과 끝</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>패턴</th>
+      <th>설명</th>
+      <th>예시</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">^x</code></td>
+      <td>문자열이 <strong>x로 시작</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">^Hello</code> → <code class="language-plaintext highlighter-rouge">"Hello world"</code> ✅, <code class="language-plaintext highlighter-rouge">"Hi Hello"</code> ❌</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">x$</code></td>
+      <td>문자열이 <strong>x로 끝</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">world$</code> → <code class="language-plaintext highlighter-rouge">"Hello world"</code> ✅, <code class="language-plaintext highlighter-rouge">"worldwide"</code> ❌</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="2-문자-매칭">2. 문자 매칭</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>패턴</th>
+      <th>설명</th>
+      <th>예시</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.x</code></td>
+      <td>임의의 한 문자 + x</td>
+      <td><code class="language-plaintext highlighter-rouge">.a</code> → <code class="language-plaintext highlighter-rouge">"ba"</code> ✅, <code class="language-plaintext highlighter-rouge">"ca"</code> ✅</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">x+</code></td>
+      <td><strong>x가 1번 이상 반복</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">go+</code> → <code class="language-plaintext highlighter-rouge">"go"</code>, <code class="language-plaintext highlighter-rouge">"goo"</code>, <code class="language-plaintext highlighter-rouge">"gooo"</code> ✅</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">x?</code></td>
+      <td>x가 <strong>있을 수도, 없을 수도 있음</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">colou?r</code> → <code class="language-plaintext highlighter-rouge">"color"</code>, <code class="language-plaintext highlighter-rouge">"colour"</code> ✅</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">x*</code></td>
+      <td>x가 <strong>0번 이상 반복</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">go*</code> → <code class="language-plaintext highlighter-rouge">"g"</code>, <code class="language-plaintext highlighter-rouge">"go"</code>, <code class="language-plaintext highlighter-rouge">"goo"</code> ✅</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">x|y</code></td>
+      <td>x <strong>또는</strong> y</td>
+      <td><code class="language-plaintext highlighter-rouge">dog|cat</code> → <code class="language-plaintext highlighter-rouge">"dog"</code> ✅, <code class="language-plaintext highlighter-rouge">"cat"</code> ✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="3-그룹과-반복">3. 그룹과 반복</h2>
+<p>괄호 내부를 한 묶음으로 처리합니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>패턴</th>
+      <th>설명</th>
+      <th>예시</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">(x)</code></td>
+      <td>그룹 지정</td>
+      <td><code class="language-plaintext highlighter-rouge">(ab)+</code> → <code class="language-plaintext highlighter-rouge">"ab"</code>, <code class="language-plaintext highlighter-rouge">"abab"</code> ✅</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">(x)(y)</code></td>
+      <td>여러 그룹</td>
+      <td><code class="language-plaintext highlighter-rouge">(a)(b)</code> → <code class="language-plaintext highlighter-rouge">"ab"</code> → <code class="language-plaintext highlighter-rouge">$1="a"</code>, <code class="language-plaintext highlighter-rouge">$2="b"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">x{n}</code></td>
+      <td>x가 <strong>n번 반복</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">a{3}</code> → <code class="language-plaintext highlighter-rouge">"aaa"</code> ✅</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">x{n,}</code></td>
+      <td>x가 <strong>n번 이상 반복</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">a{2,}</code> → <code class="language-plaintext highlighter-rouge">"aa"</code>, <code class="language-plaintext highlighter-rouge">"aaa"</code> ✅</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">x{n,m}</code></td>
+      <td>x가 <strong>n~m번 반복</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">a{2,4}</code> → <code class="language-plaintext highlighter-rouge">"aa"</code>, <code class="language-plaintext highlighter-rouge">"aaa"</code>, <code class="language-plaintext highlighter-rouge">"aaaa"</code> ✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="4-문자-집합">4. 문자 집합</h2>
+<p>괄호 내부에 지정된 문자열의 범위 중 한 문자만을 선택합니다.
+문자와 숫자 범위를 지정할 수 있습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>패턴</th>
+      <th>설명</th>
+      <th>예시</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">[xyz]</code></td>
+      <td>x, y, z 중 하나</td>
+      <td><code class="language-plaintext highlighter-rouge">[aeiou]</code> → <code class="language-plaintext highlighter-rouge">"a"</code>, <code class="language-plaintext highlighter-rouge">"e"</code>, <code class="language-plaintext highlighter-rouge">"i"</code> ✅</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">[x-z]</code></td>
+      <td>x부터 z까지</td>
+      <td><code class="language-plaintext highlighter-rouge">[m-p]</code> → <code class="language-plaintext highlighter-rouge">"m"</code>, <code class="language-plaintext highlighter-rouge">"n"</code>, <code class="language-plaintext highlighter-rouge">"o"</code>, <code class="language-plaintext highlighter-rouge">"p"</code> ✅</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">[^xy]</code></td>
+      <td>x, y를 제외한 글자</td>
+      <td><code class="language-plaintext highlighter-rouge">[^ab]</code> → <code class="language-plaintext highlighter-rouge">"c"</code>, <code class="language-plaintext highlighter-rouge">"d"</code> ✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="5-경계와-특수-문자">5. 경계와 특수 문자</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>패턴</th>
+      <th>설명</th>
+      <th>예시</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\^</code></td>
+      <td>^를 문자로 인식</td>
+      <td><code class="language-plaintext highlighter-rouge">\^abc</code> → <code class="language-plaintext highlighter-rouge">^abc</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\b</code></td>
+      <td>단어 경계</td>
+      <td><code class="language-plaintext highlighter-rouge">\bcat\b</code> → <code class="language-plaintext highlighter-rouge">"cat"</code> ✅ (<code class="language-plaintext highlighter-rouge">"concatenate"</code> ❌)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\B</code></td>
+      <td>단어 경계가 아님</td>
+      <td><code class="language-plaintext highlighter-rouge">\Bcat\B</code> → <code class="language-plaintext highlighter-rouge">"concatenate"</code> ✅</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\d</code></td>
+      <td>숫자</td>
+      <td><code class="language-plaintext highlighter-rouge">\d+</code> → <code class="language-plaintext highlighter-rouge">"123"</code> ✅</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\D</code></td>
+      <td>숫자가 아닌 문자</td>
+      <td><code class="language-plaintext highlighter-rouge">\D+</code> → <code class="language-plaintext highlighter-rouge">"abc"</code> ✅</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\s</code></td>
+      <td>공백</td>
+      <td><code class="language-plaintext highlighter-rouge">"a\sb"</code> → <code class="language-plaintext highlighter-rouge">"a b"</code> ✅</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\S</code></td>
+      <td>공백이 아닌 문자</td>
+      <td><code class="language-plaintext highlighter-rouge">\S+</code> → <code class="language-plaintext highlighter-rouge">"hello"</code> ✅</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\t</code></td>
+      <td>탭</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\v</code></td>
+      <td>수직 탭</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\w</code></td>
+      <td>알파벳 + 숫자 + <code class="language-plaintext highlighter-rouge">_</code></td>
+      <td><code class="language-plaintext highlighter-rouge">\w+</code> → <code class="language-plaintext highlighter-rouge">"word123_"</code> ✅</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\W</code></td>
+      <td>알파벳/숫자/_ 제외</td>
+      <td><code class="language-plaintext highlighter-rouge">\W+</code> → <code class="language-plaintext highlighter-rouge">"!@#"</code> ✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="6-와일드카드">6. 와일드카드</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>패턴</th>
+      <th>설명</th>
+      <th>예시</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.</code></td>
+      <td>어떤 문자든 한 글자</td>
+      <td><code class="language-plaintext highlighter-rouge">.at</code> → <code class="language-plaintext highlighter-rouge">"cat"</code>, <code class="language-plaintext highlighter-rouge">"bat"</code> ✅</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.*</code></td>
+      <td>어떤 글자가 몇 번이든 가능</td>
+      <td><code class="language-plaintext highlighter-rouge">Hello.*</code> → <code class="language-plaintext highlighter-rouge">"Hello"</code>, <code class="language-plaintext highlighter-rouge">"Hello world"</code> ✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="7-예제--이메일-검증-정규표현식">7. 예제 — 이메일 검증 정규표현식</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+</code></pre></div></div>
+
+<ul>
+  <li>^[a-zA-Z0-9._%+-]+ → 이메일 아이디 부분
+    <ul>
+      <li>영문자 대소문자, 숫자, 마침표, 특수문자가 한 번 이상 반복됨</li>
+    </ul>
+  </li>
+  <li>@ → @ 기호</li>
+  <li>[a-zA-Z0-9.-]+ → 도메인
+    <ul>
+      <li>영문자 대소문자, 숫자, 마침표, 하이픈 허용</li>
+      <li>집합 내부의 마침표는 와일드카드의 기능을 잃음</li>
+    </ul>
+  </li>
+  <li>.[a-zA-Z]{2,}$ → 최상위 도메인(.com, .net 등)
+    <ul>
+      <li>마침표 문자 뒤에 영문자가 2개 이상 오고 끝나야 함</li>
+    </ul>
+  </li>
+</ul>]]></content><author><name>개발둥이</name></author><category term="정규표현식" /><category term="Regex" /><category term="정규표현식" /><category term="문자열" /><summary type="html"><![CDATA[정규표현식(Regular Expression, 줄여서 Regex)은 문자열에서 특정 패턴을 찾고, 검사하고, 치환하기 위한 표현법입니다. 프로그래밍, 데이터 분석, 로그 검색, 웹 크롤링 등 다양한 분야에서 필수적으로 사용됩니다.]]></summary></entry><entry><title type="html">Jekyll 블로그 만들기</title><link href="http://localhost:4000/asterisk/%EA%B0%9C%EB%B0%9C/sql/Jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="alternate" type="text/html" title="Jekyll 블로그 만들기" /><published>2025-01-27T00:00:00+09:00</published><updated>2025-01-27T00:00:00+09:00</updated><id>http://localhost:4000/asterisk/%EA%B0%9C%EB%B0%9C/sql/Jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0</id><content type="html" xml:base="http://localhost:4000/asterisk/%EA%B0%9C%EB%B0%9C/sql/Jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/"><![CDATA[<h2 id="jekyll-블로그란">Jekyll 블로그란?</h2>
 <p>Jekyll은 정적 사이트 생성기로, 마크다운 파일을 HTML로 변환해주는 도구입니다.</p>
 
 <h3 id="장점">장점</h3>
@@ -28,21 +297,4 @@ bundle <span class="nb">exec </span>jekyll serve
 
 <h2 id="마무리">마무리</h2>
 
-<p>Jekyll로 블로그를 만드는 것은 매우 간단하고 효율적입니다!</p>]]></content><author><name>{&quot;name&quot;=&gt;&quot;&quot;, &quot;avatar&quot;=&gt;&quot;assets/imgs/profile.png&quot;, &quot;bio&quot;=&gt;&quot;어디를 목표로&lt;br&gt;어디까지 달렸는가.&quot;, &quot;location&quot;=&gt;&quot;Seoul, South Korea&quot;, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Email&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-envelope-square&quot;, &quot;url&quot;=&gt;&quot;mailto:amalilith97@gmail.com&quot;}, {&quot;label&quot;=&gt;&quot;Website&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;}, {&quot;label&quot;=&gt;&quot;Facebook&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook-square&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;, &quot;url&quot;=&gt;&quot;https://github.com/Rlack97&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;}]}</name></author><category term="개발" /><category term="Jekyll" /><category term="블로그" /><category term="GitHub Pages" /><summary type="html"><![CDATA[Jekyll 블로그란? Jekyll은 정적 사이트 생성기로, 마크다운 파일을 HTML로 변환해주는 도구입니다.]]></summary></entry><entry><title type="html">첫 번째 포스트</title><link href="http://localhost:4000/asterisk/%EB%B8%94%EB%A1%9C%EA%B7%B8/nest/%EC%B2%AB%EB%B2%88%EC%A7%B8-%ED%8F%AC%EC%8A%A4%ED%8A%B8/" rel="alternate" type="text/html" title="첫 번째 포스트" /><published>2025-01-27T00:00:00+09:00</published><updated>2025-01-27T00:00:00+09:00</updated><id>http://localhost:4000/asterisk/%EB%B8%94%EB%A1%9C%EA%B7%B8/nest/%EC%B2%AB%EB%B2%88%EC%A7%B8-%ED%8F%AC%EC%8A%A4%ED%8A%B8</id><content type="html" xml:base="http://localhost:4000/asterisk/%EB%B8%94%EB%A1%9C%EA%B7%B8/nest/%EC%B2%AB%EB%B2%88%EC%A7%B8-%ED%8F%AC%EC%8A%A4%ED%8A%B8/"><![CDATA[<p>안녕하세요! 이것은 제 첫 번째 블로그 포스트입니다.</p>
-
-<h2 id="소개">소개</h2>
-
-<p>이 블로그는 개발 관련 내용을 공유하기 위해 만들었습니다.</p>
-
-<h3 id="앞으로-다룰-주제들">앞으로 다룰 주제들</h3>
-
-<ul>
-  <li>웹 개발</li>
-  <li>프로그래밍 언어</li>
-  <li>개발 도구</li>
-  <li>프로젝트 후기</li>
-</ul>
-
-<h2 id="마무리">마무리</h2>
-
-<p>앞으로 많은 내용을 공유하겠습니다. 감사합니다!</p>]]></content><author><name>{&quot;name&quot;=&gt;&quot;&quot;, &quot;avatar&quot;=&gt;&quot;assets/imgs/profile.png&quot;, &quot;bio&quot;=&gt;&quot;어디를 목표로&lt;br&gt;어디까지 달렸는가.&quot;, &quot;location&quot;=&gt;&quot;Seoul, South Korea&quot;, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Email&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-envelope-square&quot;, &quot;url&quot;=&gt;&quot;mailto:amalilith97@gmail.com&quot;}, {&quot;label&quot;=&gt;&quot;Website&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;}, {&quot;label&quot;=&gt;&quot;Facebook&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook-square&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;, &quot;url&quot;=&gt;&quot;https://github.com/Rlack97&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;}]}</name></author><category term="블로그" /><category term="nest" /><category term="첫포스트" /><category term="Jekyll" /><summary type="html"><![CDATA[안녕하세요! 이것은 제 첫 번째 블로그 포스트입니다.]]></summary></entry></feed>
+<p>Jekyll로 블로그를 만드는 것은 매우 간단하고 효율적입니다!</p>]]></content><author><name>개발둥이</name></author><category term="개발" /><category term="sql" /><category term="Jekyll" /><category term="블로그" /><category term="GitHub Pages" /><summary type="html"><![CDATA[Jekyll 블로그란? Jekyll은 정적 사이트 생성기로, 마크다운 파일을 HTML로 변환해주는 도구입니다.]]></summary></entry></feed>

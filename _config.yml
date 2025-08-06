@@ -113,7 +113,7 @@ analytics:
 
 # Site Author
 author:
-  name             : ""
+  name             : "개발둥이"
   avatar           : "assets/imgs/profile.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "어디를 목표로<br>어디까지 달렸는가."
   location         : "Seoul, South Korea"

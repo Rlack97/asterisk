@@ -2,6 +2,46 @@
 
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
 
+<!-- Custom CSS for tags -->
+<style>
+/* Title and tags layout */
+.archive__item-title {
+  margin: 0;
+  flex: 1;
+}
+
+.archive__item-tags {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.archive__item-tags .tag {
+  display: inline-block;
+  background-color: #f8f9fa;
+  color: #495057;
+  padding: 0.2rem 0.5rem;
+  margin: 0.1rem 0.2rem 0.1rem 0;
+  border-radius: 0.3rem;
+  font-size: 0.75rem;
+  border: 1px solid #dee2e6;
+  text-decoration: none;
+}
+
+.archive__item-tags .tag:hover {
+  background-color: #e9ecef;
+  color: #212529;
+}
+
+/* Remove underline from title links */
+.archive__item-title a {
+  text-decoration: none !important;
+}
+
+.archive__item-title a:hover {
+  text-decoration: none !important;
+}
+</style>
+
 <!-- end custom head snippets -->
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">

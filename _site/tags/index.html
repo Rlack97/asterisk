@@ -14,7 +14,7 @@
 <meta name="description" content="주니어 개발자의 개발 기록">
 
 
-  <meta name="author" content="{&quot;name&quot;=&gt;&quot;&quot;, &quot;avatar&quot;=&gt;&quot;assets/imgs/profile.png&quot;, &quot;bio&quot;=&gt;&quot;어디를 목표로&lt;br&gt;어디까지 달렸는가.&quot;, &quot;location&quot;=&gt;&quot;Seoul, South Korea&quot;, &quot;links&quot;=&gt;[{&quot;label&quot;=&gt;&quot;Email&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-envelope-square&quot;, &quot;url&quot;=&gt;&quot;mailto:amalilith97@gmail.com&quot;}, {&quot;label&quot;=&gt;&quot;Website&quot;, &quot;icon&quot;=&gt;&quot;fas fa-fw fa-link&quot;}, {&quot;label&quot;=&gt;&quot;Twitter&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-twitter-square&quot;}, {&quot;label&quot;=&gt;&quot;Facebook&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-facebook-square&quot;}, {&quot;label&quot;=&gt;&quot;GitHub&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-github&quot;, &quot;url&quot;=&gt;&quot;https://github.com/Rlack97&quot;}, {&quot;label&quot;=&gt;&quot;Instagram&quot;, &quot;icon&quot;=&gt;&quot;fab fa-fw fa-instagram&quot;}]}">
+  <meta name="author" content="개발둥이">
   
 
 
@@ -77,6 +77,46 @@
     <!-- start custom head snippets -->
 
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- Custom CSS for tags -->
+<style>
+/* Title and tags layout */
+.archive__item-title {
+  margin: 0;
+  flex: 1;
+}
+
+.archive__item-tags {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.archive__item-tags .tag {
+  display: inline-block;
+  background-color: #f8f9fa;
+  color: #495057;
+  padding: 0.2rem 0.5rem;
+  margin: 0.1rem 0.2rem 0.1rem 0;
+  border-radius: 0.3rem;
+  font-size: 0.75rem;
+  border: 1px solid #dee2e6;
+  text-decoration: none;
+}
+
+.archive__item-tags .tag:hover {
+  background-color: #e9ecef;
+  color: #212529;
+}
+
+/* Remove underline from title links */
+.archive__item-title a {
+  text-decoration: none !important;
+}
+
+.archive__item-title a:hover {
+  text-decoration: none !important;
+}
+</style>
 
 <!-- end custom head snippets -->
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -146,14 +186,14 @@
   
     <div class="author__avatar">
       <a href="http://localhost:4000/asterisk/">
-        <img src="/asterisk/assets/imgs/profile.png" alt="" itemprop="image" class="u-photo">
+        <img src="/asterisk/assets/imgs/profile.png" alt="개발둥이" itemprop="image" class="u-photo">
       </a>
     </div>
   
 
   <div class="author__content">
     <h3 class="author__name p-name" itemprop="name">
-      <a class="u-url" rel="me" href="http://localhost:4000/asterisk/" itemprop="url"></a>
+      <a class="u-url" rel="me" href="http://localhost:4000/asterisk/" itemprop="url">개발둥이</a>
     </h3>
     
       <div class="author__bio p-note" itemprop="description">
@@ -267,7 +307,7 @@
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
-        <span class="nav__sub-title">프레임워크</span>
+        <span class="nav__sub-title">문법</span>
             <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
             <ul>
                 <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
@@ -278,7 +318,23 @@
                     
                 
                     
-                        <li><a href="/asterisk/categories/nest" class="">nest (1)</a></li>
+                        <li>
+                            <a href="/asterisk/categories/regex" class="">정규표현식 (1)</a>
+                        </li>
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                        <li>
+                            <a href="/asterisk/categories/sql" class="">SQL (1)</a>
+                        </li>
+                    
+                
                     
                 
             </ul>
@@ -310,19 +366,9 @@
       
         <li>
           <a href="#jekyll">
-            <strong>Jekyll</strong> <span class="taxonomy__count">2</span>
+            <strong>Jekyll</strong> <span class="taxonomy__count">1</span>
           </a>
         </li>
-      
-    
-      
-    
-      
-    
-      
-    
-  
-    
       
     
       
@@ -343,8 +389,24 @@
     
       
         <li>
-          <a href="#첫포스트">
-            <strong>첫포스트</strong> <span class="taxonomy__count">1</span>
+          <a href="#regex">
+            <strong>Regex</strong> <span class="taxonomy__count">1</span>
+          </a>
+        </li>
+      
+    
+      
+        <li>
+          <a href="#정규표현식">
+            <strong>정규표현식</strong> <span class="taxonomy__count">1</span>
+          </a>
+        </li>
+      
+    
+      
+        <li>
+          <a href="#문자열">
+            <strong>문자열</strong> <span class="taxonomy__count">1</span>
           </a>
         </li>
       
@@ -367,40 +429,28 @@
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/asterisk/%EB%B8%94%EB%A1%9C%EA%B7%B8/nest/%EC%B2%AB%EB%B2%88%EC%A7%B8-%ED%8F%AC%EC%8A%A4%ED%8A%B8/" rel="permalink">첫 번째 포스트
+    <div class="archive__item-header">
+      <h2 class="archive__item-title no_toc" itemprop="headline">
+        
+          <a href="/asterisk/%EA%B0%9C%EB%B0%9C/sql/Jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="permalink">Jekyll 블로그 만들기
 </a>
+        
+      </h2>
       
-    </h2>
-    
-
-
-    <p class="archive__item-excerpt" itemprop="description">안녕하세요! 이것은 제 첫 번째 블로그 포스트입니다.
-</p>
-  </article>
-</div>
-
+        <div class="archive__item-tags">
           
-            
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+            <span class="tag">Jekyll</span>
+          
+            <span class="tag">블로그</span>
+          
+            <span class="tag">GitHub Pages</span>
+          
+        </div>
       
-        <a href="/asterisk/%EA%B0%9C%EB%B0%9C/Jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="permalink">Jekyll 블로그 만들기
-</a>
-      
-    </h2>
+    </div>
     
 
 
-    <p class="archive__item-excerpt" itemprop="description">Jekyll 블로그란?
-Jekyll은 정적 사이트 생성기로, 마크다운 파일을 HTML로 변환해주는 도구입니다.
-</p>
   </article>
 </div>
 
@@ -408,16 +458,6 @@ Jekyll은 정적 사이트 생성기로, 마크다운 파일을 HTML로 변환�
         </div>
         <a href="#page-title" class="back-to-top">맨 위로 이동 &uarr;</a>
       </section>
-    
-  
-    
-  
-    
-  
-    
-  
-
-  
     
   
     
@@ -432,18 +472,28 @@ Jekyll은 정적 사이트 생성기로, 마크다운 파일을 HTML로 변환�
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/asterisk/%EA%B0%9C%EB%B0%9C/Jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="permalink">Jekyll 블로그 만들기
+    <div class="archive__item-header">
+      <h2 class="archive__item-title no_toc" itemprop="headline">
+        
+          <a href="/asterisk/%EA%B0%9C%EB%B0%9C/sql/Jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="permalink">Jekyll 블로그 만들기
 </a>
+        
+      </h2>
       
-    </h2>
+        <div class="archive__item-tags">
+          
+            <span class="tag">Jekyll</span>
+          
+            <span class="tag">블로그</span>
+          
+            <span class="tag">GitHub Pages</span>
+          
+        </div>
+      
+    </div>
     
 
 
-    <p class="archive__item-excerpt" itemprop="description">Jekyll 블로그란?
-Jekyll은 정적 사이트 생성기로, 마크다운 파일을 HTML로 변환해주는 도구입니다.
-</p>
   </article>
 </div>
 
@@ -465,18 +515,28 @@ Jekyll은 정적 사이트 생성기로, 마크다운 파일을 HTML로 변환�
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/asterisk/%EA%B0%9C%EB%B0%9C/Jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="permalink">Jekyll 블로그 만들기
+    <div class="archive__item-header">
+      <h2 class="archive__item-title no_toc" itemprop="headline">
+        
+          <a href="/asterisk/%EA%B0%9C%EB%B0%9C/sql/Jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/" rel="permalink">Jekyll 블로그 만들기
 </a>
+        
+      </h2>
       
-    </h2>
+        <div class="archive__item-tags">
+          
+            <span class="tag">Jekyll</span>
+          
+            <span class="tag">블로그</span>
+          
+            <span class="tag">GitHub Pages</span>
+          
+        </div>
+      
+    </div>
     
 
 
-    <p class="archive__item-excerpt" itemprop="description">Jekyll 블로그란?
-Jekyll은 정적 사이트 생성기로, 마크다운 파일을 HTML로 변환해주는 도구입니다.
-</p>
   </article>
 </div>
 
@@ -487,8 +547,8 @@ Jekyll은 정적 사이트 생성기로, 마크다운 파일을 HTML로 변환�
     
   
     
-      <section id="첫포스트" class="taxonomy__section">
-        <h2 class="archive__subtitle">첫포스트</h2>
+      <section id="regex" class="taxonomy__section">
+        <h2 class="archive__subtitle">Regex</h2>
         <div class="entries-list">
           
             
@@ -498,17 +558,114 @@ Jekyll은 정적 사이트 생성기로, 마크다운 파일을 HTML로 변환�
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/asterisk/%EB%B8%94%EB%A1%9C%EA%B7%B8/nest/%EC%B2%AB%EB%B2%88%EC%A7%B8-%ED%8F%AC%EC%8A%A4%ED%8A%B8/" rel="permalink">첫 번째 포스트
+    <div class="archive__item-header">
+      <h2 class="archive__item-title no_toc" itemprop="headline">
+        
+          <a href="/asterisk/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/" rel="permalink">정규표현식 기초
 </a>
+        
+      </h2>
       
-    </h2>
+        <div class="archive__item-tags">
+          
+            <span class="tag">Regex</span>
+          
+            <span class="tag">정규표현식</span>
+          
+            <span class="tag">문자열</span>
+          
+        </div>
+      
+    </div>
     
 
 
-    <p class="archive__item-excerpt" itemprop="description">안녕하세요! 이것은 제 첫 번째 블로그 포스트입니다.
-</p>
+  </article>
+</div>
+
+          
+        </div>
+        <a href="#page-title" class="back-to-top">맨 위로 이동 &uarr;</a>
+      </section>
+    
+  
+    
+      <section id="정규표현식" class="taxonomy__section">
+        <h2 class="archive__subtitle">정규표현식</h2>
+        <div class="entries-list">
+          
+            
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <div class="archive__item-header">
+      <h2 class="archive__item-title no_toc" itemprop="headline">
+        
+          <a href="/asterisk/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/" rel="permalink">정규표현식 기초
+</a>
+        
+      </h2>
+      
+        <div class="archive__item-tags">
+          
+            <span class="tag">Regex</span>
+          
+            <span class="tag">정규표현식</span>
+          
+            <span class="tag">문자열</span>
+          
+        </div>
+      
+    </div>
+    
+
+
+  </article>
+</div>
+
+          
+        </div>
+        <a href="#page-title" class="back-to-top">맨 위로 이동 &uarr;</a>
+      </section>
+    
+  
+    
+      <section id="문자열" class="taxonomy__section">
+        <h2 class="archive__subtitle">문자열</h2>
+        <div class="entries-list">
+          
+            
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <div class="archive__item-header">
+      <h2 class="archive__item-title no_toc" itemprop="headline">
+        
+          <a href="/asterisk/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/" rel="permalink">정규표현식 기초
+</a>
+        
+      </h2>
+      
+        <div class="archive__item-tags">
+          
+            <span class="tag">Regex</span>
+          
+            <span class="tag">정규표현식</span>
+          
+            <span class="tag">문자열</span>
+          
+        </div>
+      
+    </div>
+    
+
+
   </article>
 </div>
 
