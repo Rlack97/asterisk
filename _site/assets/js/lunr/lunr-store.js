@@ -1,8 +1,8 @@
 var store = [{
-        "title": "Jekyll 블로그 만들기",
-        "excerpt":"Jekyll 블로그란? Jekyll은 정적 사이트 생성기로, 마크다운 파일을 HTML로 변환해주는 도구입니다. 장점 빠른 로딩: 정적 파일이므로 매우 빠름 GitHub Pages 지원: 무료로 호스팅 가능 마크다운 지원: 간편한 글 작성 테마 다양성: 다양한 테마 사용 가능 설치 방법 # Ruby 설치 (macOS) brew install ruby # Jekyll 설치 gem install jekyll...","categories": ["개발","sql"],
-        "tags": ["Jekyll","블로그","GitHub Pages"],
-        "url": "/asterisk/%EA%B0%9C%EB%B0%9C/sql/Jekyll-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/",
+        "title": "MySQL 쿼리",
+        "excerpt":"데이터베이스를 다루다 보면 SQL 쿼리 작성이 필수가 됩니다. 특히 MySQL을 사용할 때 자주 쓰이는 구문과 함수들을 정리해두면 실무에서 큰 도움이 됩니다. 이번 글에서는 SELECT 문의 기본 구조부터 문자열, 날짜, 숫자, 조건식 함수까지 MySQL에서 자주 사용하는 SQL 쿼리들을 예제와 함께 정리해보겠습니다. 💡 참고사항 이 글의 모든 예제는 MySQL 8.0 기준으로 작성되었습니다....","categories": ["MySQL"],
+        "tags": ["SQL","MySQL","Database","쿼리"],
+        "url": "/asterisk/mysql/SQL-%EC%BF%BC%EB%A6%AC/",
         "teaser": "/asterisk/assets/imgs/teaser.png"
       },{
         "title": "정규표현식 기초",
