@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/asterisk/mysql/SQL-%EC%BF%BC%EB%A6%AC/</loc>
-<lastmod>2025-01-27T00:00:00+09:00</lastmod>
+<loc>http://localhost:4000/asterisk/sql/SQL-%EC%BF%BC%EB%A6%AC/</loc>
+<lastmod>2025-08-11T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/asterisk/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D/</loc>
-<lastmod>2025-08-06T00:00:00+09:00</lastmod>
+<lastmod>2025-08-19T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/asterisk/nifi/flowfile-%ED%8E%B8%EC%A7%91%EC%9A%A9-%ED%94%84%EB%A1%9C%EC%84%B8%EC%84%9C/</loc>
+<lastmod>2025-08-19T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/asterisk/nifi/Remote-Process-Group%EC%9C%BC%EB%A1%9C-%EC%A4%91%EC%B2%A9-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B5%AC%EC%A1%B0-%EA%B0%84%EC%86%8C%ED%99%94/</loc>
+<lastmod>2025-09-06T00:00:00+09:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/asterisk/categories/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/asterisk/categories/nifi</loc>
 </url>
 <url>
 <loc>http://localhost:4000/asterisk/categories/nest</loc>

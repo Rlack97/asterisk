@@ -23,14 +23,19 @@
                             <a href="/asterisk/categories/regex" class="">정규표현식 ({{category[1].size}})</a>
                         </li>
                     {% endif %}
-                {% endfor %}
-            </ul>
-
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "sql" %}
+                        {% if category[0] == "SQL" %}
                         <li>
                             <a href="/asterisk/categories/sql" class="">SQL ({{category[1].size}})</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        <span class="nav__sub-title">색인</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Nifi" %}
+                        <li>
+                            <a href="/asterisk/categories/nifi" class="">Nifi ({{category[1].size}})</a>
                         </li>
                     {% endif %}
                 {% endfor %}

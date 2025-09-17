@@ -1,9 +1,9 @@
 ---
-title: "SQL"
+title: "Nifi"
 layout: archive
-permalink: /categories/sql
+permalink: /categories/nifi
 author_profile: true
 --- 
 
-{% assign posts = site.categories.SQL %}
+{% assign posts = site.categories.Nifi %}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
